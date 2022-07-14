@@ -31,7 +31,7 @@ def getCheckSumChar(vin):
     checkSumTotal = 0
 
     if (len(vin) < 17):
-        print "Invalid Length: %s" % len(vin)
+        print("Invalid Length: %s" % len(vin))
         return -1
 
     for i in range(len(vin)):
@@ -39,7 +39,7 @@ def getCheckSumChar(vin):
             checkSumTotal += int(vinDigitValues[vin[i]]) * vinDigitPositionMultiplier[i];
         else:
             #Characters not in the VinDigitValues list are not valid VIN characters - return false (invalid)
-            print "Illegal Character: %s" % vin[i]
+            print("Illegal Character: %s" % vin[i])
             return -1;
 
     remain = checkSumTotal % 11
@@ -51,7 +51,7 @@ def getCheckSumChar(vin):
                 
 def getRandomVinChar():
     i = int(random.random() * len(vinDigitValues))
-    return vinDigitValues.keys()[i]
+    return list(vinDigitValues.keys())[i]
 
 def getRandomVinStart():
     #137DA903       T
